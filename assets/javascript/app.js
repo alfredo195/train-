@@ -47,6 +47,21 @@ database.ref("/train").on("child_added",function(snapshot){
     // creat new row
     var newRow = $("<tr>");
 
+    TODO //find example of calculation from class
     // calculation for next train
-    
+
+
+    // creat td element 
+    var nameTd = $("<td>" + snapshot.val().name + "</td>");
+    var destinationTd = $("<td>" + snapshot.val().destination + "</td>");
+    var timeTd = $("<td>" + snapshot.val().time + "</td>");
+    var frequencyTd = $("<td>" + snapshot.val().frequency + "</td>");
+    var nextTd = $("<td>" +  + "</td>");
+    var minAwayTd = $("<td>" +  + "</td>");
+
+    // append td to tr
+    newRow.append(nameTd,destinationTd,timeTd,frequencyTd,nextTd,minAwayTd);
+
+    //append tr to tbody
+    $("tbody").append(newRow);
 })
